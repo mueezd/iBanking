@@ -1,4 +1,4 @@
-﻿CREATE DATABASE iBanking;
+CREATE DATABASE iBanking;
 GO
 USE iBanking;
 GO
@@ -40,6 +40,7 @@ CREATE TABLE CustomerAccount(
 GO 
 
 INSERT INTO CustomerAccount (AccountNo) VALUES ('1000000000');
+
 --SELECT *
 --FROM CustomerAccount
 --GO

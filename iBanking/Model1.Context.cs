@@ -26,5 +26,12 @@ namespace iBanking
         }
     
         public virtual DbSet<AdminTable> AdminTables { get; set; }
+        public virtual DbSet<CustomerAccount> CustomerAccounts { get; set; }
+        public virtual DbSet<Debit> Debits { get; set; }
+        public virtual DbSet<Deposit> Deposits { get; set; }
+        public virtual DbSet<Employee> Employees { get; set; }
+        public virtual DbSet<FixedDeposit> FixedDeposits { get; set; }
+        public virtual DbSet<Transfer> Transfers { get; set; }
+        public virtual DbSet<UserTable> UserTables { get; set; }
     }
 }
