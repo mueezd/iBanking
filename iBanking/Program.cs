@@ -16,7 +16,7 @@ namespace iBanking
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new newAccount());
+            Application.Run(new Menu());
         }
     }
 }

@@ -168,6 +168,12 @@
     <Compile Include="withdrawForm.Designer.cs">
       <DependentUpon>withdrawForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="allCustomers.resx">
+      <DependentUpon>allCustomers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="depositForm.resx">
+      <DependentUpon>depositForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login_form.resx">
       <DependentUpon>Login_form.cs</DependentUpon>
     </EmbeddedResource>
@@ -186,6 +192,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="transferForm.resx">
+      <DependentUpon>transferForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="updationForm.resx">
+      <DependentUpon>updationForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EntityDeploy Include="Model1.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Model1.Designer.cs</LastGenOutput>

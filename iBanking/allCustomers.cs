@@ -15,6 +15,20 @@ namespace iBanking
         public allCustomers()
         {
             InitializeComponent();
+            bindgrid();
+        }
+
+        private void bindgrid()
+        {
+            dataGridViewAllCustomers.AutoGenerateColumns = false;
+            iBankingEntities iBS = new iBankingEntities();
+            var item = iBS.CustomerAccounts.ToList();
+            dataGridViewAllCustomers.DataSource = item;
+        }
+
+        private void allCustomers_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
