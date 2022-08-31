@@ -62,11 +62,17 @@ namespace iBanking
                 transfer.Date = DateTime.UtcNow;
                 transfer.Name = textBoxFromAcName.Text;
                 transfer.Balance = Convert.ToDecimal(textBoxAmount.Text);
+                transfer.ToTransfer = Convert.ToDecimal(textBoxToAccount.Text);
 
                 iBS.Transfers.Add(transfer);
                 iBS.SaveChanges();
                 MessageBox.Show("Transfer Successfully");
             }
+        }
+
+        private void transferForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

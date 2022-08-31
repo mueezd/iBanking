@@ -195,6 +195,7 @@
             this.Controls.Add(this.label1);
             this.Name = "transferForm";
             this.Text = "transferForm";
+            this.Load += new System.EventHandler(this.transferForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
