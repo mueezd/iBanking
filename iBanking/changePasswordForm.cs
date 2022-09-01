@@ -16,5 +16,29 @@ namespace iBanking
         {
             InitializeComponent();
         }
+
+        private void btnChangePassword_Click(object sender, EventArgs e)
+        {
+            iBankingEntities ibs = new iBankingEntities();
+
+            if (textBoxOldPassword.Text != String.Empty || textBoxNewPassword.Text != String.Empty
+                || textBoxConfirmPassword.Text == String.Empty)
+            {
+                AdminTable user1 = ibs.AdminTables.FirstOrDefault(a => a.UserName.Equals(textBoxUserName.Text));
+                if (user1 != null)
+                {
+                    if (user1.Password.Equals(textBoxOldPassword.Text))
+                    {
+                        user1.Password = textBoxNewPassword.Text;
+                        ibs.SaveChanges();
+                        MessageBox.Show("Password Changed Successfully");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Password Incorrect");
+                    }
+                }
+            }
+        }
     }
 }

@@ -50,14 +50,14 @@
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.groupBoxGender = new System.Windows.Forms.GroupBox();
+            this.rbOthers = new System.Windows.Forms.RadioButton();
+            this.rbFemale = new System.Windows.Forms.RadioButton();
+            this.rbMale = new System.Windows.Forms.RadioButton();
             this.groupBoxMaritialStatus = new System.Windows.Forms.GroupBox();
+            this.rbUnMarried = new System.Windows.Forms.RadioButton();
+            this.rbMarried = new System.Windows.Forms.RadioButton();
             this.pictureBoxCustomerPicture = new System.Windows.Forms.PictureBox();
             this.btnUploadPicture = new System.Windows.Forms.Button();
-            this.rbMale = new System.Windows.Forms.RadioButton();
-            this.rbFemale = new System.Windows.Forms.RadioButton();
-            this.rbOthers = new System.Windows.Forms.RadioButton();
-            this.rbMarried = new System.Windows.Forms.RadioButton();
-            this.rbUnMarried = new System.Windows.Forms.RadioButton();
             this.dataGridViewCustomerDetails = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
             this.lblShowId = new System.Windows.Forms.Label();
@@ -234,6 +234,7 @@
             this.btnUpdate.TabIndex = 19;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnDelete
             // 
@@ -257,6 +258,39 @@
             this.groupBoxGender.TabStop = false;
             this.groupBoxGender.Text = "Gender";
             // 
+            // rbOthers
+            // 
+            this.rbOthers.AutoSize = true;
+            this.rbOthers.Location = new System.Drawing.Point(235, 30);
+            this.rbOthers.Name = "rbOthers";
+            this.rbOthers.Size = new System.Drawing.Size(56, 17);
+            this.rbOthers.TabIndex = 2;
+            this.rbOthers.TabStop = true;
+            this.rbOthers.Text = "Others";
+            this.rbOthers.UseVisualStyleBackColor = true;
+            // 
+            // rbFemale
+            // 
+            this.rbFemale.AutoSize = true;
+            this.rbFemale.Location = new System.Drawing.Point(128, 30);
+            this.rbFemale.Name = "rbFemale";
+            this.rbFemale.Size = new System.Drawing.Size(59, 17);
+            this.rbFemale.TabIndex = 1;
+            this.rbFemale.TabStop = true;
+            this.rbFemale.Text = "Female";
+            this.rbFemale.UseVisualStyleBackColor = true;
+            // 
+            // rbMale
+            // 
+            this.rbMale.AutoSize = true;
+            this.rbMale.Location = new System.Drawing.Point(25, 30);
+            this.rbMale.Name = "rbMale";
+            this.rbMale.Size = new System.Drawing.Size(48, 17);
+            this.rbMale.TabIndex = 0;
+            this.rbMale.TabStop = true;
+            this.rbMale.Text = "Male";
+            this.rbMale.UseVisualStyleBackColor = true;
+            // 
             // groupBoxMaritialStatus
             // 
             this.groupBoxMaritialStatus.Controls.Add(this.rbUnMarried);
@@ -267,6 +301,28 @@
             this.groupBoxMaritialStatus.TabIndex = 22;
             this.groupBoxMaritialStatus.TabStop = false;
             this.groupBoxMaritialStatus.Text = "Maritial Status";
+            // 
+            // rbUnMarried
+            // 
+            this.rbUnMarried.AutoSize = true;
+            this.rbUnMarried.Location = new System.Drawing.Point(128, 28);
+            this.rbUnMarried.Name = "rbUnMarried";
+            this.rbUnMarried.Size = new System.Drawing.Size(77, 17);
+            this.rbUnMarried.TabIndex = 1;
+            this.rbUnMarried.TabStop = true;
+            this.rbUnMarried.Text = "Un-Married";
+            this.rbUnMarried.UseVisualStyleBackColor = true;
+            // 
+            // rbMarried
+            // 
+            this.rbMarried.AutoSize = true;
+            this.rbMarried.Location = new System.Drawing.Point(25, 28);
+            this.rbMarried.Name = "rbMarried";
+            this.rbMarried.Size = new System.Drawing.Size(60, 17);
+            this.rbMarried.TabIndex = 0;
+            this.rbMarried.TabStop = true;
+            this.rbMarried.Text = "Married";
+            this.rbMarried.UseVisualStyleBackColor = true;
             // 
             // pictureBoxCustomerPicture
             // 
@@ -286,61 +342,6 @@
             this.btnUploadPicture.Text = "Upload Picture";
             this.btnUploadPicture.UseVisualStyleBackColor = true;
             this.btnUploadPicture.Click += new System.EventHandler(this.btnUploadPicture_Click);
-            // 
-            // rbMale
-            // 
-            this.rbMale.AutoSize = true;
-            this.rbMale.Location = new System.Drawing.Point(25, 30);
-            this.rbMale.Name = "rbMale";
-            this.rbMale.Size = new System.Drawing.Size(48, 17);
-            this.rbMale.TabIndex = 0;
-            this.rbMale.TabStop = true;
-            this.rbMale.Text = "Male";
-            this.rbMale.UseVisualStyleBackColor = true;
-            // 
-            // rbFemale
-            // 
-            this.rbFemale.AutoSize = true;
-            this.rbFemale.Location = new System.Drawing.Point(128, 30);
-            this.rbFemale.Name = "rbFemale";
-            this.rbFemale.Size = new System.Drawing.Size(59, 17);
-            this.rbFemale.TabIndex = 1;
-            this.rbFemale.TabStop = true;
-            this.rbFemale.Text = "Female";
-            this.rbFemale.UseVisualStyleBackColor = true;
-            // 
-            // rbOthers
-            // 
-            this.rbOthers.AutoSize = true;
-            this.rbOthers.Location = new System.Drawing.Point(235, 30);
-            this.rbOthers.Name = "rbOthers";
-            this.rbOthers.Size = new System.Drawing.Size(56, 17);
-            this.rbOthers.TabIndex = 2;
-            this.rbOthers.TabStop = true;
-            this.rbOthers.Text = "Others";
-            this.rbOthers.UseVisualStyleBackColor = true;
-            // 
-            // rbMarried
-            // 
-            this.rbMarried.AutoSize = true;
-            this.rbMarried.Location = new System.Drawing.Point(25, 28);
-            this.rbMarried.Name = "rbMarried";
-            this.rbMarried.Size = new System.Drawing.Size(60, 17);
-            this.rbMarried.TabIndex = 0;
-            this.rbMarried.TabStop = true;
-            this.rbMarried.Text = "Married";
-            this.rbMarried.UseVisualStyleBackColor = true;
-            // 
-            // rbUnMarried
-            // 
-            this.rbUnMarried.AutoSize = true;
-            this.rbUnMarried.Location = new System.Drawing.Point(128, 28);
-            this.rbUnMarried.Name = "rbUnMarried";
-            this.rbUnMarried.Size = new System.Drawing.Size(77, 17);
-            this.rbUnMarried.TabIndex = 1;
-            this.rbUnMarried.TabStop = true;
-            this.rbUnMarried.Text = "Un-Married";
-            this.rbUnMarried.UseVisualStyleBackColor = true;
             // 
             // dataGridViewCustomerDetails
             // 

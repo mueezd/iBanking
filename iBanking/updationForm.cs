@@ -118,5 +118,52 @@ namespace iBanking
             iBS.CustomerAccounts.Remove(acc);
             iBS.SaveChanges();
         }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            iBS = new iBankingEntities();
+            decimal accountNo = Convert.ToDecimal(textBoxAccountNo.Text);
+            CustomerAccount customerAc = iBS.CustomerAccounts.First(s => s.AccountNo.Equals(accountNo));
+            customerAc.AccountNo = Convert.ToDecimal(textBoxAccountNo.Text);
+            customerAc.Name = textBoxName.Text;
+            customerAc.Date = dateTimePickerDoB.Value;
+            customerAc.FathersName = textBoxFathersName.Text;
+            customerAc.MothersName = textBoxMothersName.Text;
+            customerAc.PhoneNo = textBoxPhoneNo.Text;
+            if (rbMale.Checked == true)
+            {
+                customerAc.Gender = "Male";
+            }
+            else
+            {
+                if(rbFemale.Checked = true)
+                {
+                    customerAc.Gender = "Female";
+                }
+            }
+            if (rbMarried.Checked == true)
+            {
+                customerAc.MaritalStatus = "Married";
+            }
+            else
+            {
+                if (rbUnMarried.Checked == true)
+                {
+                    customerAc.MaritalStatus = "Un-Married";
+                }
+            }
+
+            Image img = pictureBoxCustomerPicture.Image;
+            if (ms != null)
+            {
+                img.Save(ms, img.RawFormat);
+                customerAc.Picture = ms.ToArray();
+            }
+
+            customerAc.Address = textBoxAddress.Text;
+            customerAc.State = textBoxState.Text;
+            iBS.SaveChanges();
+            MessageBox.Show("Update Successfully");
+        }
     }
 }

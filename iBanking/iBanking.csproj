@@ -171,8 +171,17 @@
     <EmbeddedResource Include="allCustomers.resx">
       <DependentUpon>allCustomers.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="balanceSheetForm.resx">
+      <DependentUpon>balanceSheetForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="changePasswordForm.resx">
+      <DependentUpon>changePasswordForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="depositForm.resx">
       <DependentUpon>depositForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fixedDepositForm.resx">
+      <DependentUpon>fixedDepositForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login_form.resx">
       <DependentUpon>Login_form.cs</DependentUpon>
@@ -197,6 +206,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="updationForm.resx">
       <DependentUpon>updationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="viewFixedDepositFrom.resx">
+      <DependentUpon>viewFixedDepositFrom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="withdrawForm.resx">
+      <DependentUpon>withdrawForm.cs</DependentUpon>
     </EmbeddedResource>
     <EntityDeploy Include="Model1.edmx">
       <Generator>EntityModelCodeGenerator</Generator>

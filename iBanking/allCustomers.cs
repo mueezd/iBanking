@@ -20,7 +20,7 @@ namespace iBanking
 
         private void bindgrid()
         {
-            dataGridViewAllCustomers.AutoGenerateColumns = false;
+            dataGridViewAllCustomers.AutoGenerateColumns = true;
             iBankingEntities iBS = new iBankingEntities();
             var item = iBS.CustomerAccounts.ToList();
             dataGridViewAllCustomers.DataSource = item;
