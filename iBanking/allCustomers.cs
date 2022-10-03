@@ -22,7 +22,7 @@ namespace iBanking
         {
             dataGridViewAllCustomers.AutoGenerateColumns = true;
             iBankingEntities iBS = new iBankingEntities();
-            var item = iBS.CustomerAccounts.ToList();
+            var item = iBS.tblConsumerAccounts.ToList();
             dataGridViewAllCustomers.DataSource = item;
         }
 

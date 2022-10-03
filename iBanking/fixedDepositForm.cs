@@ -34,7 +34,7 @@ namespace iBanking
         {
             iBankingEntities iBS = new iBankingEntities();
             decimal accNo = Convert.ToDecimal(textBoxAccountNo.Text);
-            var accounts = iBS.CustomerAccounts.Where(x => x.AccountNo == accNo).SingleOrDefault();
+            var accounts = iBS.tblConsumerAccounts.Where(x => x.AccountNo == accNo).SingleOrDefault();
 
             FixedDeposit fdFrm = new FixedDeposit();
             fdFrm.AccountNo = Convert.ToDecimal(textBoxAccountNo.Text);

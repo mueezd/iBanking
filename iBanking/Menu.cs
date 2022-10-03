@@ -46,7 +46,7 @@ namespace iBanking
 
         private void depositToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            depositForm depoForm = new depositForm();
+            Mode depoForm = new Mode();
             depoForm.MdiParent = this;
             depoForm.Show();
         }
@@ -81,7 +81,9 @@ namespace iBanking
 
         private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
+            Login_form log = new Login_form();
+            log.ShowDialog();
         }
 
         private void changePasswordToolStripMenuItem_Click(object sender, EventArgs e)
@@ -101,6 +103,115 @@ namespace iBanking
             viewFixedDepositFrom viewFDForm = new viewFixedDepositFrom();
             viewFDForm.MdiParent = this;
             viewFDForm.Show();  
+        }
+
+        private void viewStatementsTToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void addPayeeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            addPayee aP = new addPayee();
+            aP.MdiParent = this;
+            aP.Show();
+        }
+
+        private void makePaymentToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            makePayment mP = new makePayment();
+            mP.MdiParent = this;
+            mP.Show();
+        }
+
+        private void viewBalanceToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            viewBalance vB = new viewBalance();
+            vB.MdiParent = this;
+            vB.Show();
+        }
+
+        private void viewStatementTransactionsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            viewTransactions vB = new viewTransactions();
+            vB.MdiParent = this;
+            vB.Show();
+        }
+
+        private void transferToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            transferForm vB = new transferForm();
+            vB.MdiParent = this;
+            vB.Show();
+        }
+
+        private void Menu_Load(object sender, EventArgs e)
+        {
+            if(userClass.userRole == 1)
+            {
+                consumerToolStripMenuItem.Visible = false;
+            }
+            else if(userClass.userRole == 2)
+            {
+                newAccountToolStripMenuItem.Visible = false;
+                transactionsToolStripMenuItem.Visible = false;
+                vIewToolStripMenuItem.Visible = false;
+                overDraftODToolStripMenuItem.Visible = false;
+            }
+        }
+
+        private void createOverDraftToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            formCreateOD cOD = new formCreateOD();
+            cOD.MdiParent = this; ;
+            cOD.Show();
+
+        }
+
+        private void addInterestThresholdToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            formAddInterest addInt = new formAddInterest();
+            addInt.MdiParent = this;
+            addInt.Show();  
+
+        }
+
+        private void processInterestToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            formProcessInterest proInt = new formProcessInterest();
+            proInt.MdiParent = this;
+            proInt.Show(); 
+        }
+
+        private void allCustomersToolStripMenuItem_Click_2(object sender, EventArgs e)
+        {
+            allCustomers aC = new allCustomers();
+            aC.MdiParent = this;
+            aC.Show();
+        }
+
+        private void receivedInterestToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void receivedInterestToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            formConsumerInterest cI = new formConsumerInterest();
+            cI.MdiParent = this;
+            cI.Show();
+        }
+
+        private void viewInterestToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void viewOverDraftToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            formViewOd odF = new formViewOd();
+            odF.MdiParent = this;
+            odF.Show();
         }
     }
 }

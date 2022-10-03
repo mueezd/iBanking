@@ -24,7 +24,7 @@ namespace iBanking
             if (textBoxOldPassword.Text != String.Empty || textBoxNewPassword.Text != String.Empty
                 || textBoxConfirmPassword.Text == String.Empty)
             {
-                AdminTable user1 = ibs.AdminTables.FirstOrDefault(a => a.UserName.Equals(textBoxUserName.Text));
+                tblUser user1 = ibs.tblUsers.FirstOrDefault(a => a.UserName.Equals(textBoxUserName.Text));
                 if (user1 != null)
                 {
                     if (user1.Password.Equals(textBoxOldPassword.Text))

@@ -12,15 +12,14 @@ namespace iBanking
     using System;
     using System.Collections.Generic;
     
-    public partial class Debit
+    public partial class tblUser
     {
-        public int SNo { get; set; }
-        public System.DateTime Date { get; set; }
-        public Nullable<decimal> AccountNo { get; set; }
+        public int Id { get; set; }
+        public string UserName { get; set; }
+        public string Password { get; set; }
+        public int RoleId { get; set; }
+        public Nullable<int> EmployeeId { get; set; }
         public string Name { get; set; }
-        public Nullable<decimal> OldBalance { get; set; }
-        public string Mode { get; set; }
-        public Nullable<decimal> DebitAmount { get; set; }
-        public string Remarks { get; set; }
+        public Nullable<int> AccountNo { get; set; }
     }
 }

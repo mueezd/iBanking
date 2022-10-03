@@ -38,9 +38,12 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.GvPayments = new System.Windows.Forms.DataGridView();
+            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewWithdrawal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDeposit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTransfer)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GvPayments)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -49,9 +52,9 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(36, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(145, 24);
+            this.label1.Size = new System.Drawing.Size(189, 24);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Balance Sheet";
+            this.label1.Text = "Transaction History";
             // 
             // textBoxAccountNo
             // 
@@ -130,11 +133,30 @@
             this.label5.TabIndex = 9;
             this.label5.Text = "Transfer Details:";
             // 
+            // GvPayments
+            // 
+            this.GvPayments.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.GvPayments.Location = new System.Drawing.Point(1043, 119);
+            this.GvPayments.Name = "GvPayments";
+            this.GvPayments.Size = new System.Drawing.Size(323, 373);
+            this.GvPayments.TabIndex = 10;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(1040, 94);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(86, 13);
+            this.label6.TabIndex = 11;
+            this.label6.Text = "Payment Details:";
+            // 
             // balanceSheetForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1053, 523);
+            this.ClientSize = new System.Drawing.Size(1389, 523);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.GvPayments);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -146,10 +168,11 @@
             this.Controls.Add(this.textBoxAccountNo);
             this.Controls.Add(this.label1);
             this.Name = "balanceSheetForm";
-            this.Text = "balanceSheetForm";
+            this.Text = "Transaction History";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewWithdrawal)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDeposit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTransfer)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GvPayments)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -167,5 +190,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.DataGridView GvPayments;
+        private System.Windows.Forms.Label label6;
     }
 }

@@ -25,13 +25,17 @@ namespace iBanking
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<AdminTable> AdminTables { get; set; }
-        public virtual DbSet<CustomerAccount> CustomerAccounts { get; set; }
-        public virtual DbSet<Debit> Debits { get; set; }
-        public virtual DbSet<Deposit> Deposits { get; set; }
         public virtual DbSet<Employee> Employees { get; set; }
         public virtual DbSet<FixedDeposit> FixedDeposits { get; set; }
+        public virtual DbSet<tblConsumerAccount> tblConsumerAccounts { get; set; }
+        public virtual DbSet<tblDeposit> tblDeposits { get; set; }
+        public virtual DbSet<tblPayee> tblPayees { get; set; }
+        public virtual DbSet<tblPayment> tblPayments { get; set; }
+        public virtual DbSet<tblUser> tblUsers { get; set; }
         public virtual DbSet<Transfer> Transfers { get; set; }
-        public virtual DbSet<UserTable> UserTables { get; set; }
+        public virtual DbSet<tblWithdrawal> tblWithdrawals { get; set; }
+        public virtual DbSet<tblOverDraft> tblOverDrafts { get; set; }
+        public virtual DbSet<tblInterest> tblInterests { get; set; }
+        public virtual DbSet<tblProcessInterest> tblProcessInterests { get; set; }
     }
 }

@@ -15,7 +15,7 @@ namespace iBanking
     {
         iBankingEntities iBS;
         MemoryStream ms;
-        BindingList<CustomerAccount> bi;
+        BindingList<tblConsumerAccount> bi;
         public updationForm()
         {
             InitializeComponent();
@@ -28,11 +28,11 @@ namespace iBanking
 
         private void btnDetails_Click(object sender, EventArgs e)
         {
-            bi = new BindingList<CustomerAccount>();
+            bi = new BindingList<tblConsumerAccount>();
             iBS = new iBankingEntities();
             decimal accNo = Convert.ToDecimal(textBoxAccountNo.Text);
 
-            var item = iBS.CustomerAccounts.Where(a => a.AccountNo == accNo);
+            var item = iBS.tblConsumerAccounts.Where(a => a.AccountNo == accNo);
             foreach(var item1 in item)
             {
                 bi.Add(item1);
@@ -42,10 +42,10 @@ namespace iBanking
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            bi = new BindingList<CustomerAccount>();
+            bi = new BindingList<tblConsumerAccount>();
             iBS = new iBankingEntities();
 
-            var item = iBS.CustomerAccounts.Where(a => a.Name == textBoxName.Text);
+            var item = iBS.tblConsumerAccounts.Where(a => a.Name == textBoxName.Text);
             foreach (var item1 in item)
             {
                 bi.Add(item1);
@@ -58,7 +58,7 @@ namespace iBanking
             iBS = new iBankingEntities();
             decimal accNo = Convert.ToDecimal(dataGridViewCustomerDetails.Rows[e.RowIndex].Cells[1].Value);
 
-            var item = iBS.CustomerAccounts.Where(a => a.AccountNo == accNo).FirstOrDefault();
+            var item = iBS.tblConsumerAccounts.Where(a => a.AccountNo == accNo).FirstOrDefault();
             lblShowId.Text = item.CustomerId.ToString();
             textBoxAccountNo.Text = item.AccountNo.ToString();
             textBoxName.Text = item.Name;
@@ -69,7 +69,7 @@ namespace iBanking
             byte[] img = item.Picture;
             MemoryStream ms = new MemoryStream(img);
             pictureBoxCustomerPicture.Image = Image.FromStream(ms);
-            textBoxState.Text = item.State;
+            //textBoxState.Text = item.State;
 
             if (item.Gender == "Male")
             {
@@ -114,56 +114,75 @@ namespace iBanking
             iBS = new iBankingEntities();
             int a = Convert.ToInt32(lblShowId.Text);
 
-            CustomerAccount acc = iBS.CustomerAccounts.First(s => s.CustomerId.Equals(a));
-            iBS.CustomerAccounts.Remove(acc);
+            tblConsumerAccount acc = iBS.tblConsumerAccounts.First(s => s.CustomerId.Equals(a));
+            iBS.tblConsumerAccounts.Remove(acc);
             iBS.SaveChanges();
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            iBS = new iBankingEntities();
-            decimal accountNo = Convert.ToDecimal(textBoxAccountNo.Text);
-            CustomerAccount customerAc = iBS.CustomerAccounts.First(s => s.AccountNo.Equals(accountNo));
-            customerAc.AccountNo = Convert.ToDecimal(textBoxAccountNo.Text);
-            customerAc.Name = textBoxName.Text;
-            customerAc.Date = dateTimePickerDoB.Value;
-            customerAc.FathersName = textBoxFathersName.Text;
-            customerAc.MothersName = textBoxMothersName.Text;
-            customerAc.PhoneNo = textBoxPhoneNo.Text;
-            if (rbMale.Checked == true)
+            if (textBoxAccountNo.Text == string.Empty)
             {
-                customerAc.Gender = "Male";
+                MessageBox.Show("Please Enter Account No");
+            }
+            else if (textBoxName.Text == string.Empty)
+            {
+                MessageBox.Show("Please Enter Name");
+            }
+            else if (textBoxFathersName.Text == string.Empty)
+            {
+                MessageBox.Show("Please Enter Father's Name");
+            }
+            else if (textBoxMothersName.Text == string.Empty)
+            {
+                MessageBox.Show("Please Enter Mother's Name");
             }
             else
             {
-                if(rbFemale.Checked = true)
+                iBS = new iBankingEntities();
+                decimal accountNo = Convert.ToDecimal(textBoxAccountNo.Text);
+                tblConsumerAccount customerAc = iBS.tblConsumerAccounts.First(s => s.AccountNo.Equals(accountNo));
+                customerAc.AccountNo = Convert.ToDecimal(textBoxAccountNo.Text);
+                customerAc.Name = textBoxName.Text;
+                customerAc.Date = dateTimePickerDoB.Value;
+                customerAc.FathersName = textBoxFathersName.Text;
+                customerAc.MothersName = textBoxMothersName.Text;
+                customerAc.PhoneNo = textBoxPhoneNo.Text;
+                if (rbMale.Checked == true)
                 {
-                    customerAc.Gender = "Female";
+                    customerAc.Gender = "Male";
                 }
-            }
-            if (rbMarried.Checked == true)
-            {
-                customerAc.MaritalStatus = "Married";
-            }
-            else
-            {
-                if (rbUnMarried.Checked == true)
+                else
                 {
-                    customerAc.MaritalStatus = "Un-Married";
+                    if (rbFemale.Checked == true)
+                    {
+                        customerAc.Gender = "Female";
+                    }
                 }
-            }
+                if (rbMarried.Checked == true)
+                {
+                    customerAc.MaritalStatus = "Married";
+                }
+                else
+                {
+                    if (rbUnMarried.Checked == true)
+                    {
+                        customerAc.MaritalStatus = "Un-Married";
+                    }
+                }
 
-            Image img = pictureBoxCustomerPicture.Image;
-            if (ms != null)
-            {
-                img.Save(ms, img.RawFormat);
-                customerAc.Picture = ms.ToArray();
-            }
+                Image img = pictureBoxCustomerPicture.Image;
+                if (ms != null)
+                {
+                    img.Save(ms, img.RawFormat);
+                    customerAc.Picture = ms.ToArray();
+                }
 
-            customerAc.Address = textBoxAddress.Text;
-            customerAc.State = textBoxState.Text;
-            iBS.SaveChanges();
-            MessageBox.Show("Update Successfully");
+                customerAc.Address = textBoxAddress.Text;
+                //customerAc.State = textBoxState.Text;
+                iBS.SaveChanges();
+                MessageBox.Show("Update Information Successfully");
+            }
         }
     }
 }

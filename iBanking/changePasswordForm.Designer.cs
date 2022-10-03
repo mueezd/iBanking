@@ -53,7 +53,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(49, 162);
+            this.label3.Location = new System.Drawing.Point(36, 136);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(75, 13);
             this.label3.TabIndex = 2;
@@ -62,7 +62,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(49, 274);
+            this.label4.Location = new System.Drawing.Point(36, 228);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(94, 13);
             this.label4.TabIndex = 3;
@@ -71,7 +71,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(49, 219);
+            this.label5.Location = new System.Drawing.Point(36, 192);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(81, 13);
             this.label5.TabIndex = 4;
@@ -79,28 +79,28 @@
             // 
             // textBoxOldPassword
             // 
-            this.textBoxOldPassword.Location = new System.Drawing.Point(169, 159);
+            this.textBoxOldPassword.Location = new System.Drawing.Point(140, 136);
             this.textBoxOldPassword.Name = "textBoxOldPassword";
             this.textBoxOldPassword.Size = new System.Drawing.Size(283, 20);
             this.textBoxOldPassword.TabIndex = 6;
             // 
             // textBoxNewPassword
             // 
-            this.textBoxNewPassword.Location = new System.Drawing.Point(169, 216);
+            this.textBoxNewPassword.Location = new System.Drawing.Point(140, 192);
             this.textBoxNewPassword.Name = "textBoxNewPassword";
             this.textBoxNewPassword.Size = new System.Drawing.Size(283, 20);
             this.textBoxNewPassword.TabIndex = 7;
             // 
             // textBoxConfirmPassword
             // 
-            this.textBoxConfirmPassword.Location = new System.Drawing.Point(169, 271);
+            this.textBoxConfirmPassword.Location = new System.Drawing.Point(140, 228);
             this.textBoxConfirmPassword.Name = "textBoxConfirmPassword";
             this.textBoxConfirmPassword.Size = new System.Drawing.Size(283, 20);
             this.textBoxConfirmPassword.TabIndex = 8;
             // 
             // btnChangePassword
             // 
-            this.btnChangePassword.Location = new System.Drawing.Point(346, 332);
+            this.btnChangePassword.Location = new System.Drawing.Point(317, 271);
             this.btnChangePassword.Name = "btnChangePassword";
             this.btnChangePassword.Size = new System.Drawing.Size(106, 23);
             this.btnChangePassword.TabIndex = 9;
@@ -111,7 +111,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(49, 107);
+            this.label2.Location = new System.Drawing.Point(36, 104);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(63, 13);
             this.label2.TabIndex = 1;
@@ -119,7 +119,7 @@
             // 
             // textBoxUserName
             // 
-            this.textBoxUserName.Location = new System.Drawing.Point(169, 104);
+            this.textBoxUserName.Location = new System.Drawing.Point(140, 104);
             this.textBoxUserName.Name = "textBoxUserName";
             this.textBoxUserName.Size = new System.Drawing.Size(283, 20);
             this.textBoxUserName.TabIndex = 5;
@@ -128,7 +128,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(472, 320);
             this.Controls.Add(this.btnChangePassword);
             this.Controls.Add(this.textBoxConfirmPassword);
             this.Controls.Add(this.textBoxNewPassword);
@@ -140,7 +140,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "changePasswordForm";
-            this.Text = "changePasswordForm";
+            this.Text = "Change Password";
             this.ResumeLayout(false);
             this.PerformLayout();
 

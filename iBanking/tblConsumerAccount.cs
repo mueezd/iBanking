@@ -12,7 +12,7 @@ namespace iBanking
     using System;
     using System.Collections.Generic;
     
-    public partial class CustomerAccount
+    public partial class tblConsumerAccount
     {
         public int CustomerId { get; set; }
         public decimal AccountNo { get; set; }

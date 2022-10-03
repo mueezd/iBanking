@@ -43,22 +43,23 @@
             this.btnGetDetails = new System.Windows.Forms.Button();
             this.btnTransfer = new System.Windows.Forms.Button();
             this.textBoxToAccount = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(120, 58);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(46, 88);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(105, 20);
+            this.label1.Size = new System.Drawing.Size(70, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Current Date:";
             // 
             // lblDate
             // 
             this.lblDate.AutoSize = true;
-            this.lblDate.Location = new System.Drawing.Point(231, 63);
+            this.lblDate.Location = new System.Drawing.Point(165, 89);
             this.lblDate.Name = "lblDate";
             this.lblDate.Size = new System.Drawing.Size(35, 13);
             this.lblDate.TabIndex = 1;
@@ -67,7 +68,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(43, 123);
+            this.label2.Location = new System.Drawing.Point(46, 133);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(116, 13);
             this.label2.TabIndex = 2;
@@ -76,7 +77,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(43, 173);
+            this.label3.Location = new System.Drawing.Point(46, 183);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(107, 13);
             this.label3.TabIndex = 3;
@@ -85,7 +86,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(43, 210);
+            this.label4.Location = new System.Drawing.Point(46, 220);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(49, 13);
             this.label4.TabIndex = 4;
@@ -94,7 +95,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(43, 303);
+            this.label5.Location = new System.Drawing.Point(46, 313);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(97, 13);
             this.label5.TabIndex = 5;
@@ -103,7 +104,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(43, 262);
+            this.label6.Location = new System.Drawing.Point(46, 272);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(106, 13);
             this.label6.TabIndex = 6;
@@ -112,7 +113,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(43, 345);
+            this.label7.Location = new System.Drawing.Point(46, 355);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(46, 13);
             this.label7.TabIndex = 7;
@@ -120,35 +121,35 @@
             // 
             // textBoxFromAccountNo
             // 
-            this.textBoxFromAccountNo.Location = new System.Drawing.Point(165, 120);
+            this.textBoxFromAccountNo.Location = new System.Drawing.Point(168, 130);
             this.textBoxFromAccountNo.Name = "textBoxFromAccountNo";
             this.textBoxFromAccountNo.Size = new System.Drawing.Size(230, 20);
             this.textBoxFromAccountNo.TabIndex = 8;
             // 
             // textBoxFromAcName
             // 
-            this.textBoxFromAcName.Location = new System.Drawing.Point(165, 170);
+            this.textBoxFromAcName.Location = new System.Drawing.Point(168, 180);
             this.textBoxFromAcName.Name = "textBoxFromAcName";
             this.textBoxFromAcName.Size = new System.Drawing.Size(230, 20);
             this.textBoxFromAcName.TabIndex = 9;
             // 
             // textBoxBalance
             // 
-            this.textBoxBalance.Location = new System.Drawing.Point(165, 207);
+            this.textBoxBalance.Location = new System.Drawing.Point(168, 217);
             this.textBoxBalance.Name = "textBoxBalance";
             this.textBoxBalance.Size = new System.Drawing.Size(230, 20);
             this.textBoxBalance.TabIndex = 10;
             // 
             // textBoxAmount
             // 
-            this.textBoxAmount.Location = new System.Drawing.Point(165, 342);
+            this.textBoxAmount.Location = new System.Drawing.Point(168, 352);
             this.textBoxAmount.Name = "textBoxAmount";
             this.textBoxAmount.Size = new System.Drawing.Size(230, 20);
             this.textBoxAmount.TabIndex = 11;
             // 
             // btnGetDetails
             // 
-            this.btnGetDetails.Location = new System.Drawing.Point(410, 118);
+            this.btnGetDetails.Location = new System.Drawing.Point(415, 128);
             this.btnGetDetails.Name = "btnGetDetails";
             this.btnGetDetails.Size = new System.Drawing.Size(102, 23);
             this.btnGetDetails.TabIndex = 12;
@@ -158,7 +159,7 @@
             // 
             // btnTransfer
             // 
-            this.btnTransfer.Location = new System.Drawing.Point(319, 398);
+            this.btnTransfer.Location = new System.Drawing.Point(292, 398);
             this.btnTransfer.Name = "btnTransfer";
             this.btnTransfer.Size = new System.Drawing.Size(106, 23);
             this.btnTransfer.TabIndex = 13;
@@ -168,16 +169,27 @@
             // 
             // textBoxToAccount
             // 
-            this.textBoxToAccount.Location = new System.Drawing.Point(165, 259);
+            this.textBoxToAccount.Location = new System.Drawing.Point(168, 269);
             this.textBoxToAccount.Name = "textBoxToAccount";
             this.textBoxToAccount.Size = new System.Drawing.Size(230, 20);
             this.textBoxToAccount.TabIndex = 14;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(46, 43);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(146, 20);
+            this.label8.TabIndex = 15;
+            this.label8.Text = "Balance Transfer";
             // 
             // transferForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(564, 450);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.textBoxToAccount);
             this.Controls.Add(this.btnTransfer);
             this.Controls.Add(this.btnGetDetails);
@@ -194,7 +206,7 @@
             this.Controls.Add(this.lblDate);
             this.Controls.Add(this.label1);
             this.Name = "transferForm";
-            this.Text = "transferForm";
+            this.Text = "Balance Transfer";
             this.Load += new System.EventHandler(this.transferForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -218,5 +230,6 @@
         private System.Windows.Forms.Button btnGetDetails;
         private System.Windows.Forms.Button btnTransfer;
         private System.Windows.Forms.TextBox textBoxToAccount;
+        private System.Windows.Forms.Label label8;
     }
 }

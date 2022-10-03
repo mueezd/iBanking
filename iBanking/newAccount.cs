@@ -30,7 +30,6 @@ namespace iBanking
 
         private void loadState()
         {
-            comboBoxState.Items.Add("London");
             comboBoxAccountType.Items.Add("Current Account");
             comboBoxAccountType.Items.Add("Savings Account");
         }
@@ -38,7 +37,7 @@ namespace iBanking
         private void loadAccount()
         {
             iBE = new iBankingEntities();
-            var item = iBE.CustomerAccounts.ToArray();
+            var item = iBE.tblConsumerAccounts.ToArray();
             AccountNo = item.LastOrDefault().AccountNo + 1;
             textBoxAccountNo.Text = Convert.ToString(AccountNo);
         }
@@ -68,50 +67,115 @@ namespace iBanking
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            if (comboBoxAccountType.SelectedIndex == -1)
+            {
+                MessageBox.Show("Please Select Account Type.");
+            }
+            else if (textBoxName.Text == string.Empty)
+            {
+                MessageBox.Show("Please Enter Account Name.");
+            }
+            else if (TextBoxPhoneNo.Text == string.Empty)
+            {
+                MessageBox.Show("Please Enter Phone Number.");
+            }
+            else if (textBoxAddress.Text == string.Empty)
+            {
+                MessageBox.Show("Please Enter Address.");
+            }
+            else if (textBoxBalance.Text == string.Empty)
+            {
+                MessageBox.Show("Please Enter Balance.");
+            }
+            else if (textBoxFathersName.Text == string.Empty)
+            {
+                MessageBox.Show("Please Enter Father's Name.");
+            }
+            else if (textBoxMothersName.Text == string.Empty)
+            {
+                MessageBox.Show("Please Enter Mother's Name.");
+            }
+            else if (!rbMale.Checked && !rbFemale.Checked && !rbOther.Checked)
+            {
+                MessageBox.Show("Please Select Gender.");
+            }
+            else if (!rbMarried.Checked && !rbUnmarried.Checked)
+            {
+                MessageBox.Show("Please Select Marital Status.");
+            }
+            else
+            {
+                string accName = textBoxName.Text;
+                string AccType = comboBoxAccountType.Text;
 
-            // Gender Selection By Radio Button.
-            if (rbMale.Checked)
-            {
-                Gender = "Male";
-            }
-            else if (rbFemale.Checked)
-            {
-                Gender = "Female";
-            }
-            else if (rbOther.Checked)
-            {
-                Gender = "Other";
-            }
-            //Marital Status selection by Radio Button.
-            if (rbMarried.Checked)
-            {
-                MaritalStatus = "Married";
-            }
-            else if (rbUnmarried.Checked)
-            {
-                MaritalStatus = "Un-Married";
-            }
+                var accInfo = iBE.tblConsumerAccounts.Where(d => d.Name == accName && d.AccountType == AccType).FirstOrDefault();
+                if (accInfo != null)
+                {
+                    MessageBox.Show("Account already exists !!!");
+                    return;
+                }
+                else
+                {
+                    // Gender Selection By Radio Button.
+                    if (rbMale.Checked)
+                    {
+                        Gender = "Male";
+                    }
+                    else if (rbFemale.Checked)
+                    {
+                        Gender = "Female";
+                    }
+                    else if (rbOther.Checked)
+                    {
+                        Gender = "Other";
+                    }
+                    //Marital Status selection by Radio Button.
 
+                    if (rbMarried.Checked)
+                    {
+                        MaritalStatus = "Married";
+                    }
+                    else if (rbUnmarried.Checked)
+                    {
+                        MaritalStatus = "Un-Married";
+                    }
 
-            iBE = new iBankingEntities();
-            CustomerAccount cac = new CustomerAccount();
-            cac.AccountNo = Convert.ToDecimal(textBoxAccountNo.Text);
-            cac.AccountType = comboBoxAccountType.SelectedItem.ToString();
-            cac.Name = textBoxName.Text;
-            cac.DoB = dateTimePicker1.Value;
-            cac.PhoneNo = TextBoxPhoneNo.Text;
-            cac.Address = textBoxAddress.Text;
-            cac.State = comboBoxState.SelectedItem.ToString();
-            cac.Gender = Gender;
-            cac.MaritalStatus = MaritalStatus;
-            cac.FathersName = textBoxFathersName.Text;
-            cac.MothersName = textBoxMothersName.Text;
-            cac.Balance = Convert.ToDecimal(textBoxBalance.Text);
-            cac.Date = Convert.ToDateTime(lblDate.Text);
-            cac.Picture = ms.ToArray();
-            iBE.CustomerAccounts.Add(cac);
-            iBE.SaveChanges();
-            MessageBox.Show("Customer Account Information Saved Successfully");
+                    iBE = new iBankingEntities();
+                    tblConsumerAccount cac = new tblConsumerAccount();
+                    cac.AccountNo = Convert.ToDecimal(textBoxAccountNo.Text);
+                    cac.AccountType = comboBoxAccountType.SelectedItem.ToString();
+                    cac.Name = textBoxName.Text;
+                    cac.DoB = dateTimePicker1.Value;
+                    cac.PhoneNo = TextBoxPhoneNo.Text;
+                    cac.Address = textBoxAddress.Text;
+                    cac.Gender = Gender;
+                    cac.MaritalStatus = MaritalStatus;
+                    cac.FathersName = textBoxFathersName.Text;
+                    cac.MothersName = textBoxMothersName.Text;
+                    cac.Balance = Convert.ToDecimal(textBoxBalance.Text);
+                    cac.Date = Convert.ToDateTime(lblDate.Text);
+                    cac.Picture = ms.ToArray();
+                    iBE.tblConsumerAccounts.Add(cac);
+                    iBE.SaveChanges();
+                    MessageBox.Show("Customer Account Information Saved Successfully");
+                }
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            // All Value of form clear 
+            textBoxAccountNo.Clear();
+            textBoxAddress.Clear();
+            textBoxBalance.Clear();
+            textBoxFathersName.Clear();
+            textBoxMothersName.Clear();
+            textBoxName.Clear();
+            rbMale.Checked = false;
+            rbFemale.Checked = false;
+            rbOther.Checked = false;
+            rbMarried.Checked = false;
+            rbUnmarried.Checked = false;
         }
     }
 }

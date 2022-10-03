@@ -12,12 +12,14 @@ namespace iBanking
     using System;
     using System.Collections.Generic;
     
-    public partial class AdminTable
+    public partial class tblProcessInterest
     {
         public int Id { get; set; }
-        public string UserName { get; set; }
-        public string Password { get; set; }
-        public int RoleId { get; set; }
-        public Nullable<int> EmployeeId { get; set; }
+        public int AccountNo { get; set; }
+        public string AccountName { get; set; }
+        public Nullable<decimal> Balance { get; set; }
+        public decimal InterestRate { get; set; }
+        public decimal InterestAmount { get; set; }
+        public decimal TotalAmount { get; set; }
     }
 }

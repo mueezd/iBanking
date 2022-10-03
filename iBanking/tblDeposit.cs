@@ -12,7 +12,7 @@ namespace iBanking
     using System;
     using System.Collections.Generic;
     
-    public partial class Deposit
+    public partial class tblDeposit
     {
         public int SNo { get; set; }
         public Nullable<decimal> AccountNo { get; set; }

@@ -19,24 +19,36 @@ namespace iBanking
 
         private void btnShow_Click(object sender, EventArgs e)
         {
-            iBankingEntities ibs = new iBankingEntities();
+            if (textBoxAccountNo.Text == string.Empty)
+            {
+                MessageBox.Show("Please Enter Account No");
+            }
+            else
+            {
+                iBankingEntities ibs = new iBankingEntities();
 
-            decimal b = Convert.ToDecimal(textBoxAccountNo.Text);
-            var item = (from u in ibs.Debits
-                        where u.AccountNo == b
-                        select u);
+                decimal b = Convert.ToDecimal(textBoxAccountNo.Text);
+                var item = (from u in ibs.tblWithdrawals
+                            where u.AccountNo == b
+                            select u);
 
-            dataGridViewWithdrawal.DataSource = item.ToList();
+                dataGridViewWithdrawal.DataSource = item.ToList();
 
-            var item1 = (from u in ibs.Deposits
-                        where u.AccountNo == b
-                        select u);
-            dataGridViewDeposit.DataSource = item1.ToList();
+                var item1 = (from u in ibs.tblDeposits
+                             where u.AccountNo == b
+                             select u);
+                dataGridViewDeposit.DataSource = item1.ToList();
 
-            var item2 = (from u in ibs.Transfers
-                         where u.AccountNo == b
-                         select u);
-            dataGridViewTransfer.DataSource = item2.ToList();
+                var item2 = (from u in ibs.Transfers
+                             where u.AccountNo == b
+                             select u);
+                dataGridViewTransfer.DataSource = item2.ToList();
+
+                var item3 = (from u in ibs.tblPayments
+                             where u.AccountId == b
+                             select u);
+                GvPayments.DataSource = item3.ToList();
+            }
         }
     }
 }

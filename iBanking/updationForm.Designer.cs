@@ -36,14 +36,12 @@
             this.lblMothersName = new System.Windows.Forms.Label();
             this.lblAddress = new System.Windows.Forms.Label();
             this.lblPhoneNo = new System.Windows.Forms.Label();
-            this.lblState = new System.Windows.Forms.Label();
             this.textBoxAccountNo = new System.Windows.Forms.TextBox();
             this.textBoxName = new System.Windows.Forms.TextBox();
             this.textBoxFathersName = new System.Windows.Forms.TextBox();
             this.textBoxMothersName = new System.Windows.Forms.TextBox();
             this.textBoxAddress = new System.Windows.Forms.TextBox();
             this.textBoxPhoneNo = new System.Windows.Forms.TextBox();
-            this.textBoxState = new System.Windows.Forms.TextBox();
             this.dateTimePickerDoB = new System.Windows.Forms.DateTimePicker();
             this.btnDetails = new System.Windows.Forms.Button();
             this.btnSearch = new System.Windows.Forms.Button();
@@ -73,9 +71,9 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(25, 31);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(131, 24);
+            this.label1.Size = new System.Drawing.Size(247, 24);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Update Form";
+            this.label1.Text = "Update Or Close Account";
             // 
             // lblAccountNo
             // 
@@ -140,15 +138,6 @@
             this.lblPhoneNo.TabIndex = 7;
             this.lblPhoneNo.Text = "Phone No:";
             // 
-            // lblState
-            // 
-            this.lblState.AutoSize = true;
-            this.lblState.Location = new System.Drawing.Point(26, 460);
-            this.lblState.Name = "lblState";
-            this.lblState.Size = new System.Drawing.Size(35, 13);
-            this.lblState.TabIndex = 8;
-            this.lblState.Text = "State:";
-            // 
             // textBoxAccountNo
             // 
             this.textBoxAccountNo.Location = new System.Drawing.Point(118, 138);
@@ -192,13 +181,6 @@
             this.textBoxPhoneNo.Size = new System.Drawing.Size(311, 20);
             this.textBoxPhoneNo.TabIndex = 14;
             // 
-            // textBoxState
-            // 
-            this.textBoxState.Location = new System.Drawing.Point(118, 457);
-            this.textBoxState.Name = "textBoxState";
-            this.textBoxState.Size = new System.Drawing.Size(311, 20);
-            this.textBoxState.TabIndex = 15;
-            // 
             // dateTimePickerDoB
             // 
             this.dateTimePickerDoB.Location = new System.Drawing.Point(118, 216);
@@ -228,21 +210,21 @@
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(118, 544);
+            this.btnUpdate.Location = new System.Drawing.Point(118, 489);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(145, 23);
             this.btnUpdate.TabIndex = 19;
-            this.btnUpdate.Text = "Update";
+            this.btnUpdate.Text = "Update Account";
             this.btnUpdate.UseVisualStyleBackColor = true;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(284, 544);
+            this.btnDelete.Location = new System.Drawing.Point(284, 489);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(145, 23);
             this.btnDelete.TabIndex = 20;
-            this.btnDelete.Text = "Delete";
+            this.btnDelete.Text = "Close Account";
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
@@ -348,7 +330,7 @@
             this.dataGridViewCustomerDetails.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewCustomerDetails.Location = new System.Drawing.Point(765, 30);
             this.dataGridViewCustomerDetails.Name = "dataGridViewCustomerDetails";
-            this.dataGridViewCustomerDetails.Size = new System.Drawing.Size(455, 555);
+            this.dataGridViewCustomerDetails.Size = new System.Drawing.Size(455, 482);
             this.dataGridViewCustomerDetails.TabIndex = 25;
             this.dataGridViewCustomerDetails.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewCustomerDetails_CellClick);
             // 
@@ -376,7 +358,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1232, 597);
+            this.ClientSize = new System.Drawing.Size(1232, 533);
             this.Controls.Add(this.lblShowId);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dataGridViewCustomerDetails);
@@ -389,14 +371,12 @@
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.btnDetails);
             this.Controls.Add(this.dateTimePickerDoB);
-            this.Controls.Add(this.textBoxState);
             this.Controls.Add(this.textBoxPhoneNo);
             this.Controls.Add(this.textBoxAddress);
             this.Controls.Add(this.textBoxMothersName);
             this.Controls.Add(this.textBoxFathersName);
             this.Controls.Add(this.textBoxName);
             this.Controls.Add(this.textBoxAccountNo);
-            this.Controls.Add(this.lblState);
             this.Controls.Add(this.lblPhoneNo);
             this.Controls.Add(this.lblAddress);
             this.Controls.Add(this.lblMothersName);
@@ -406,7 +386,7 @@
             this.Controls.Add(this.lblAccountNo);
             this.Controls.Add(this.label1);
             this.Name = "updationForm";
-            this.Text = "updationForm";
+            this.Text = "Update Account Info";
             this.Load += new System.EventHandler(this.updationForm_Load);
             this.groupBoxGender.ResumeLayout(false);
             this.groupBoxGender.PerformLayout();
@@ -429,14 +409,12 @@
         private System.Windows.Forms.Label lblMothersName;
         private System.Windows.Forms.Label lblAddress;
         private System.Windows.Forms.Label lblPhoneNo;
-        private System.Windows.Forms.Label lblState;
         private System.Windows.Forms.TextBox textBoxAccountNo;
         private System.Windows.Forms.TextBox textBoxName;
         private System.Windows.Forms.TextBox textBoxFathersName;
         private System.Windows.Forms.TextBox textBoxMothersName;
         private System.Windows.Forms.TextBox textBoxAddress;
         private System.Windows.Forms.TextBox textBoxPhoneNo;
-        private System.Windows.Forms.TextBox textBoxState;
         private System.Windows.Forms.DateTimePicker dateTimePickerDoB;
         private System.Windows.Forms.Button btnDetails;
         private System.Windows.Forms.Button btnSearch;

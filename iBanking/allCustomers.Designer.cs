@@ -47,9 +47,9 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(8, 33);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(176, 24);
+            this.label1.Size = new System.Drawing.Size(183, 24);
             this.label1.TabIndex = 1;
-            this.label1.Text = "All Customers List";
+            this.label1.Text = "All Consumers List";
             // 
             // allCustomers
             // 
@@ -59,7 +59,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridViewAllCustomers);
             this.Name = "allCustomers";
-            this.Text = "allCustomers";
+            this.Text = "All Consumer List";
             this.Load += new System.EventHandler(this.allCustomers_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAllCustomers)).EndInit();
             this.ResumeLayout(false);
